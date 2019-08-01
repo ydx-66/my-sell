@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ 
+    <style>
+        * {
+            margin: 0;
+        }
+        .father  {
+            width: 100vw;
+            background-color: blanchedalmond;
+        }
+        .father div {
+            width: 25vw;
+            height: 50vh;
+            float: left;
+        }
+
+        .father::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div style="background-color: red"></div>
+        <div style="background-color: yellow"></div>
+        <div style="background-color: blue"></div>
+        <div style="background-color: green"></div>
+    </div>
+</body>
+
+</html>

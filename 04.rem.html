@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        /* function init(){
+            var width=document.documentElement.clientWidth;
+            //动态设置设备的html字体大小
+            document.documentElement.style.fontSize = width / 320 * 12 + 'px';
+            if(width<=320){
+                document.documentElement.style.fontSize = 12 + 'px';
+            }
+        }
+    
+        init()
+        //当屏幕宽度变化时
+        window.addEventListener('resize',init)
+        //当切换横竖屏时
+        window.addEventListener('orientationchange',init) */
+
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if (clientWidth >= 640) {
+                            docEl.style.fontSize = '100px';
+                        } else {
+                            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                        }
+                 };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    
+    </script>
+    <style>
+        div {
+            width: 5rem;
+            height: 5rem;
+            background-color: #f00;
+        }
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div>
+
+
+
+    </div>
+</body>
+</html>
